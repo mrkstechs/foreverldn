@@ -4,15 +4,17 @@ import {ReactComponent as Shape} from '../images/shape.svg';
 function Welcome(){
     return(
         <div id="welcome">
-            <div id="logo-area">
-                <div id="initals">
-                    <span>FL</span>
+            <div className="inner">
+                <div id="logo-area">
+                    <div id="initals">
+                        <span>FL</span>
+                    </div>
+                    <Shape />
                 </div>
-                <Shape />
-            </div>
-            <div id="textarea">
-                <p>forÊver london</p>
-                <p>lashes</p>
+                <div id="textarea">
+                    <p>forÊver london</p>
+                    <p>lashes</p>
+                </div>
             </div>
         </div>
     )

@@ -10,6 +10,8 @@
     #logo-area{
         position: relative;
         display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0em 2em;
         #initals{
             position: absolute;
@@ -20,10 +22,38 @@
             text-align: center;
             font-size: 5em;
             font-family: $playfair;
+            opacity: 0;
+            transition: opacity .5s ease;
+            animation: fade-in 1s ease 1.5s 1 normal forwards;
+        }
+        #shape{
+            display: block;
+            #shape-sqr_3_, #shape-sqr_2_,
+            #shape-oct_3_, #shape-oct_2_{
+                transform-origin: center;
+                transition: transform .1s ease;
+            }
+            #shape-sqr_3_{
+                transform: scale(0) rotate(45deg);
+                animation: growspin 1s ease 0.5s 1 normal forwards;
+            }
+            #shape-sqr_2_{
+                transform: scale(0);
+                animation: grow 1s ease 0.7s 1 normal forwards;
+            }
+            #shape-oct_3_{
+                transform: scale(0.5) rotate(75deg);
+                animation: growspinoct 1s ease 0s 1 normal forwards;
+            }
+            #shape-oct_2_{
+                transform: scale(0.5);
+                animation: growoct 1s ease 0.2s 1 normal forwards;
+            }
         }
     }
     #textarea{
         text-align: center;
+        opacity: 0;
         p:nth-child(1){
             font-family: $playfair;
             font-size: 1.4rem;
@@ -37,5 +67,31 @@
             text-transform: uppercase;
             letter-spacing: 5px;
         }
+    }
+}
+// keyframes
+@keyframes growspin{
+    to{
+        transform: scale(1) rotate(0deg);
+    }
+}
+@keyframes grow{
+    to{
+        transform: scale(1);
+    }
+}
+@keyframes growspinoct{
+    to{
+        transform: scale(1) rotate(0deg);
+    }
+}
+@keyframes growoct{
+    to{
+        transform: scale(1);
+    }
+}
+@keyframes fade-in{
+    to{
+        opacity: 1;
     }
 }
